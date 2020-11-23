@@ -23,11 +23,16 @@ server
 //Configuração para leitura de arquivos estaticos
 .use(express.static("public"))
 
+
 //Rotas da Aplicação
 .get("/", pageLanding)
 .get("/study", pageStudy )
 .get("/give-classes", pageGiveClasses)
 .post("/save-classes", saveClasses)
-.listen(5500)
+var port = process.env.PORT || 3000;
+.listen(port, function () {
+    console.log('Umbler listening on port %s', port);
+})
 
+app.listen(port, );
  
